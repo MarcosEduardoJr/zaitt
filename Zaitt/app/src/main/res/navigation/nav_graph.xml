@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/searchStoreFragment">
+
+
+    <fragment
+        android:id="@+id/searchStoreFragment"
+        android:name="com.zaitt.fragments.SearchStoreFragment"
+        android:label="fragment_search_store"
+        tools:layout="@layout/fragment_search_store">
+        <action
+            android:id="@+id/action_next"
+            app:destination="@id/storeOrderDescriptionFragment" />
+        <argument
+            android:name="store"
+            app:argType="com.zaitt.model.Store" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeOrderDescriptionFragment"
+        android:name="com.zaitt.fragments.order.OrderDescriptionFragment"
+        android:label="fragment_store_order_description"
+        tools:layout="@layout/fragment_store_order_description">
+        <argument
+            android:name="store"
+            app:argType="com.zaitt.model.Store" />
+
+        <action
+            android:id="@+id/action_next"
+            app:destination="@id/valueEstimatOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/valueEstimatOrderFragment"
+        android:name="com.zaitt.fragments.order.ValueEstimatOrderFragment"
+        android:label="fragment_value_estimat_order"
+        tools:layout="@layout/fragment_value_estimat_order">
+        <argument
+            android:name="store"
+            app:argType="com.zaitt.model.Store" />
+        <argument
+            android:name="order"
+            app:argType="com.zaitt.model.Order" />
+        <action
+            android:id="@+id/action_next"
+            app:destination="@id/confirmOrderFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmOrderFragment2"
+        android:name="com.zaitt.fragments.order.ConfirmOrderFragment"
+        android:label="fragment_confirm_order"
+        tools:layout="@layout/fragment_confirm_order">
+        <argument
+            android:name="store"
+            app:argType="com.zaitt.model.Store"
+            app:nullable="true" />
+        <argument
+            android:name="order"
+            app:argType="com.zaitt.model.Order"
+            app:nullable="true" />
+
+        <argument
+            android:name="credit_card"
+            app:nullable="true"
+            app:argType="com.zaitt.entity.CreditCard" />
+        <action
+            android:id="@+id/action_next"
+            app:destination="@id/confirmedOrderFragment" />
+        <action
+            android:id="@+id/action_next_list_cards"
+            app:destination="@id/listCardsFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmedOrderFragment"
+        android:name="com.zaitt.fragments.order.ConfirmedOrderFragment"
+        android:label="fragment_confirmed_order"
+        tools:layout="@layout/fragment_confirmed_order" >
+
+        <argument
+            android:name="store"
+            app:argType="com.zaitt.model.Store"
+            app:nullable="true" />
+        <argument
+            android:name="order"
+            app:argType="com.zaitt.model.Order"
+            app:nullable="true" />
+        <argument
+            android:name="credit_card"
+            app:nullable="true"
+            app:argType="com.zaitt.entity.CreditCard" />
+    </fragment>
+    <fragment
+        android:id="@+id/listCardsFragment"
+        android:name="com.zaitt.fragments.creditCard.ListCardsFragment"
+        android:label="fragment_list_cards"
+        tools:layout="@layout/fragment_list_cards">
+        <action
+            android:id="@+id/action_next"
+            app:destination="@id/newCreditCardNumberCardFragment"
+         />
+        <action
+            android:id="@+id/action_return"
+            app:destination="@id/confirmOrderFragment2"
+           />
+    </fragment>
+    <fragment
+        android:id="@+id/newCreditCardNumberCardFragment"
+        android:name="com.zaitt.fragments.creditCard.NewCreditCardNumberCardFragment"
+        android:label="fragment_new_credit_card_number_card"
+        tools:layout="@layout/fragment_new_credit_card_number_card">
+        <action
+            android:id="@+id/action_next"
+            app:destination="@id/newCreditCardNameFragment"
+          />
+    </fragment>
+    <fragment
+        android:id="@+id/newCreditCardNameFragment"
+        android:name="com.zaitt.fragments.creditCard.NewCreditCardNameFragment"
+        android:label="fragment_new_credit_card_name"
+        tools:layout="@layout/fragment_new_credit_card_name">
+        <argument
+            android:name="credit_card"
+            app:argType="com.zaitt.entity.CreditCard" />
+        <action
+            android:id="@+id/action_next"
+            app:destination="@id/newCreditCardDueDateFragment"
+          />
+    </fragment>
+    <fragment
+        android:id="@+id/newCreditCardDueDateFragment"
+        android:name="com.zaitt.fragments.creditCard.NewCreditCardDueDateFragment"
+        android:label="fragment_new_credit_card_due_date"
+        tools:layout="@layout/fragment_new_credit_card_due_date">
+        <argument
+            android:name="credit_card"
+            app:argType="com.zaitt.entity.CreditCard" />
+        <action
+            android:id="@+id/action_next"
+            app:destination="@id/newCreditCardCvvFragment"
+           />
+    </fragment>
+    <fragment
+        android:id="@+id/newCreditCardCvvFragment"
+        android:name="com.zaitt.fragments.creditCard.NewCreditCardCvvFragment"
+        android:label="fragment_new_credit_card_cvv"
+        tools:layout="@layout/fragment_new_credit_card_cvv" >
+        <argument
+            android:name="credit_card"
+            app:argType="com.zaitt.entity.CreditCard" />
+
+        <action
+            android:id="@+id/action_next"
+            app:destination="@id/newCreditCardCpfFragment"
+           />
+    </fragment>
+    <fragment
+        android:id="@+id/newCreditCardCpfFragment"
+        android:name="com.zaitt.fragments.creditCard.NewCreditCardCpfFragment"
+        android:label="fragment_new_credit_card_cpf"
+        tools:layout="@layout/fragment_new_credit_card_cpf" >
+        <argument
+            android:name="credit_card"
+            app:argType="com.zaitt.entity.CreditCard" />
+        <action
+            android:id="@+id/action_next"
+            app:destination="@id/confirmOrderFragment2" />
+    </fragment>
+</navigation>

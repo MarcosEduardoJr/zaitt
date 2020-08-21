@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Zaitt</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="search">Buscar</string>
+    <string name="search_store">Buscar\nestabelecimento</string>
+    <string name="search_result">Resultados da busca:</string>
+    <string name="describe_order">Descreva seu pedido</string>
+    <string name="next">Avançar</string>
+    <string name="advance">Avançar</string>
+    <string name="inform_value_estimat_order">Informe o valor estimado do pedido</string>
+    <string name="currency_real">R$</string>
+    <string name="confirm_order">Confirmar pedido</string>
+    <string name="payment">Pagamento</string>
+    <string name="choose_card">Selecionar cartão</string>
+    <string name="ok">Ok</string>
+    <string name="confirmed_order">Pedido\nconfirmado!</string>
+    <string name="cards">Cartões</string>
+    <string name="add_new_card">Adicionar novo cartão</string>
+    <string name="new_card">Novo cartão</string>
+    <string name="credit_cards">Cartões de crédito</string>
+    <string name="msg_not_have_card">Opa!\nParece que você ainda não cadastrou uma forma de pagamento.</string>
+    <string name="add_card">Adicionar cartão</string>
+    <string name="number_of_card">Número do cartão</string>
+    <string name="hint_number_card">0000 0000 0000 0000</string>
+    <string name="name">Nome</string>
+    <string name="due_date">Data de vencimento</string>
+    <string name="cvv">CVV</string>
+    <string name="cpf">CPF</string>
+    <string name="label_value_estimate">Valor: R$ %s</string>
+    <string name="label_bullet_number_credit_card">\u2022 \u2022 \u2022 \u2022 %s</string>
+</resources>
